@@ -42,7 +42,7 @@ public class GridPanel extends JPanel {
         for(int w = 0; w < getWidth(); w += gridWidth)
             g.drawLine(w, 0, w, getHeight());
 
-        for(int h = 0; h < getHeight(); h+= gridHeight)
+        for(int h = 0; h < getHeight(); h += gridHeight)
             g.drawLine(0, h, getWidth(), h);
     }
 

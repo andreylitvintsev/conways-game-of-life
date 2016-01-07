@@ -1,5 +1,7 @@
 package by.zztop;
 
+
+import by.zztop.controller.CellsController;
 import by.zztop.model.CellsModel;
 
 import javax.swing.*;

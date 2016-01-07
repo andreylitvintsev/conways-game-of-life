@@ -1,22 +1,21 @@
 package by.zztop.controller;
 
-import by.zztop.CellsModelInterface;
 import by.zztop.model.CellsModel;
 
-public class CellsController {
+public class CellsController{
 
-    private CellsModelInterface cellsModel;
+    private CellsModel cellsModel;
 
-    public CellsController(CellsModelInterface cellsModel){
+    public CellsController(CellsModel cellsModel){
         this.cellsModel = cellsModel;
     }
 
-    public CellsModelInterface getCellsModel(){
+    public CellsModel getCellsModel(){
         return cellsModel;
     }
 
     public void nextGeneration(){
-        CellsModelInterface nextGenerationCellsModel = new CellsModel(cellsModel.columns(), cellsModel.rows());
+        CellsModel nextGenerationCellsModel = new CellsModel(cellsModel.columns(), cellsModel.rows());
         for(int row = 0; row < cellsModel.rows(); ++row)
             for(int column = 0; column < cellsModel.columns(); ++column){
                 if(!cellsModel.itsAlive(column, row) && cellsModel.itsHasThreeNeighbors(column, row)) // рождение

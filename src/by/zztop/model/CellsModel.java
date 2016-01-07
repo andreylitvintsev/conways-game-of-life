@@ -1,41 +1,33 @@
 package by.zztop.model;
 
-import by.zztop.CellsModelInterface;
 
-
-public class CellsModel implements CellsModelInterface {
+public class CellsModel {
 
     private boolean[][] matrixOfCells;
     public CellsModel(int width, int hight) {
         matrixOfCells = new boolean[hight][width]; // 45 60
     }
 
-    @Override
     public boolean itsAlive(int column, int row) {
         return matrixOfCells[row][column];
     }
 
-    @Override
     public boolean itsHasThreeNeighbors(int column, int row) {
         return countOfNeighbors(column, row) == 3;
     }
 
-    @Override
     public boolean itsHasTwoNeighbors(int column, int row) {
         return countOfNeighbors(column, row) == 2;
     }
 
-    @Override
     public void setStatusOfCell(int column, int row) {
         matrixOfCells[row][column] = !matrixOfCells[row][column];
     }
 
-    @Override
     public int rows() {
         return matrixOfCells.length;
     }
 
-    @Override
     public int columns() {
         return matrixOfCells[0].length;
     }
