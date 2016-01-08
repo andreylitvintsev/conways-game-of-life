@@ -2,10 +2,10 @@ package by.zztop.model;
 
 
 public class CellsModel {
-
     private boolean[][] matrixOfCells;
-    public CellsModel(int width, int hight) {
-        matrixOfCells = new boolean[hight][width]; // 45 60
+
+    public CellsModel(int width, int height) {
+        matrixOfCells = new boolean[height][width];
     }
 
     public boolean itsAlive(int column, int row) {

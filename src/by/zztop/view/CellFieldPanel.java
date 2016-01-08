@@ -7,7 +7,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class GridPanel extends JPanel {
+
+public class CellFieldPanel extends JPanel {
     private Color gridColor = new Color(30, 30, 30);
     private Color backgroundColor = new Color(26, 26, 26);
     private Color cellColor = new Color(255, 147,0);
@@ -16,7 +17,7 @@ public class GridPanel extends JPanel {
     private CellsController cellsController;
 
 
-    public GridPanel(CellsController cellsController) {
+    public CellFieldPanel(CellsController cellsController) {
         this.cellsController = cellsController;
         setBackground(backgroundColor);
         setAlignmentX(JComponent.WIDTH);
@@ -24,12 +25,27 @@ public class GridPanel extends JPanel {
         setPreferredSize(new Dimension(cellsController.getCellsModel().columns() * sizeOfCell, cellsController.getCellsModel().rows() * sizeOfCell));
 
         addMouseListener(new MouseAdapter() {
+            @Override
             public void mousePressed(MouseEvent e) {
-                cellsController.getCellsModel().setStatusOfCell(e.getX() / 10, e.getY() / 10);
-                repaint();
+                if(e.getButton() == MouseEvent.BUTTON1) {
+                    cellsController.getCellsModel().setStatusOfCell(e.getX() / 10, e.getY() / 10);
+                    repaint();
+                }
             }
         });
+
     }
+
+    public void clearField(){
+        cellsController.clearModel();
+        repaint();
+    }
+
+    public void toNextGeneration(){
+        cellsController.nextGeneration();
+        repaint();
+    }
+
 
     public void setCellsController(CellsController cellsController) {
         this.cellsController = cellsController;

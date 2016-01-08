@@ -2,8 +2,8 @@ package by.zztop.controller;
 
 import by.zztop.model.CellsModel;
 
-public class CellsController{
 
+public class CellsController{
     private CellsModel cellsModel;
 
     public CellsController(CellsModel cellsModel){
@@ -26,5 +26,8 @@ public class CellsController{
         cellsModel = nextGenerationCellsModel;
     }
 
+    public void clearModel(){
+        cellsModel = new CellsModel(cellsModel.columns(), cellsModel.rows());
+    }
 
 }

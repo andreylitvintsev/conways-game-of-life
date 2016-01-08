@@ -1,16 +1,16 @@
 package by.zztop;
 
-
-import by.zztop.controller.CellsController;
-import by.zztop.model.CellsModel;
-
 import javax.swing.*;
+
+import by.zztop.view.MainFrame;
+
 
 public class Main {
 
     public static void main(String[] args) {
         setUIStyle();
-        new MainFrame("Conway's Game of Life").setVisible(true);
+        MainFrame mainFrame = new MainFrame("Conway's Game of Life");
+        mainFrame.setVisible(true);
     }
 
     static private void setUIStyle(){
