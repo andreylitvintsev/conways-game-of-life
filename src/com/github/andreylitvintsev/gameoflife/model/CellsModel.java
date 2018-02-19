@@ -1,4 +1,4 @@
-package by.zztop.model;
+package com.github.andreylitvintsev.gameoflife.model;
 
 
 public class CellsModel {

@@ -1,7 +1,7 @@
-package by.zztop.view;
+package com.github.andreylitvintsev.gameoflife.view;
 
-import by.zztop.controller.CellsController;
-import by.zztop.model.CellsModel;
+import com.github.andreylitvintsev.gameoflife.controller.CellsController;
+import com.github.andreylitvintsev.gameoflife.model.CellsModel;
 
 import javax.swing.*;
 import java.awt.*;

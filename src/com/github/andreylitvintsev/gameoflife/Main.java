@@ -1,8 +1,8 @@
-package by.zztop;
+package com.github.andreylitvintsev.gameoflife;
 
 import javax.swing.*;
 
-import by.zztop.view.MainFrame;
+import com.github.andreylitvintsev.gameoflife.view.MainFrame;
 
 
 public class Main {

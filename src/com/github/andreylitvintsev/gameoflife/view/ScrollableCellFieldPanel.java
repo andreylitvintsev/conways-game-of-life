@@ -1,6 +1,6 @@
-package by.zztop.view;
+package com.github.andreylitvintsev.gameoflife.view;
 
-import by.zztop.controller.CellsController;
+import com.github.andreylitvintsev.gameoflife.controller.CellsController;
 
 import javax.swing.*;
 import java.awt.*;

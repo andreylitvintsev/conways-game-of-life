@@ -1,6 +1,6 @@
-package by.zztop.controller;
+package com.github.andreylitvintsev.gameoflife.controller;
 
-import by.zztop.model.CellsModel;
+import com.github.andreylitvintsev.gameoflife.model.CellsModel;
 
 
 public class CellsController{
