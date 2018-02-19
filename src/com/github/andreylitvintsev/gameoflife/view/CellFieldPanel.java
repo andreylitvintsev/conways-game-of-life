@@ -11,7 +11,7 @@ import java.awt.event.MouseEvent;
 public class CellFieldPanel extends JPanel {
     private Color gridColor = new Color(30, 30, 30);
     private Color backgroundColor = new Color(26, 26, 26);
-    private Color cellColor = new Color(255, 147,0);
+    private Color cellColor = new Color(255, 147, 0);
     private int sizeOfCell = 10;
 
     private CellsController cellsController;
@@ -27,7 +27,7 @@ public class CellFieldPanel extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                if(e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     cellsController.getCellsModel().setStatusOfCell(e.getX() / 10, e.getY() / 10);
                     repaint();
                 }
@@ -36,12 +36,12 @@ public class CellFieldPanel extends JPanel {
 
     }
 
-    public void clearField(){
+    public void clearField() {
         cellsController.clearModel();
         repaint();
     }
 
-    public void toNextGeneration(){
+    public void toNextGeneration() {
         cellsController.nextGeneration();
         repaint();
     }
@@ -107,17 +107,18 @@ public class CellFieldPanel extends JPanel {
     private void drawGrid(Graphics g) {
         g.setColor(gridColor);
 
-        for(int w = 0; w <= cellsController.getCellsModel().columns() * sizeOfCell; w += sizeOfCell)
+        for (int w = 0; w <= cellsController.getCellsModel().columns() * sizeOfCell; w += sizeOfCell)
             g.drawLine(w, 0, w, cellsController.getCellsModel().columns() * sizeOfCell);
 
-        for(int h = 0; h <= cellsController.getCellsModel().rows() * sizeOfCell; h += sizeOfCell)
+        for (int h = 0; h <= cellsController.getCellsModel().rows() * sizeOfCell; h += sizeOfCell)
             g.drawLine(0, h, cellsController.getCellsModel().rows() * sizeOfCell, h);
     }
 
     private void drawCells(Graphics g) {
         g.setColor(cellColor);
-        for(int i = 0; i < cellsController.getCellsModel().rows(); ++i)
-            for(int j = 0; j < cellsController.getCellsModel().columns(); ++j)
-                if(cellsController.getCellsModel().itsAlive(j, i)) g.fillRect(j * sizeOfCell, i * sizeOfCell, sizeOfCell, sizeOfCell);
+        for (int i = 0; i < cellsController.getCellsModel().rows(); ++i)
+            for (int j = 0; j < cellsController.getCellsModel().columns(); ++j)
+                if (cellsController.getCellsModel().itsAlive(j, i))
+                    g.fillRect(j * sizeOfCell, i * sizeOfCell, sizeOfCell, sizeOfCell);
     }
 }

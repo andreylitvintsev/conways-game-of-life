@@ -3,30 +3,30 @@ package com.github.andreylitvintsev.gameoflife.controller;
 import com.github.andreylitvintsev.gameoflife.model.CellsModel;
 
 
-public class CellsController{
+public class CellsController {
     private CellsModel cellsModel;
 
-    public CellsController(CellsModel cellsModel){
+    public CellsController(CellsModel cellsModel) {
         this.cellsModel = cellsModel;
     }
 
-    public CellsModel getCellsModel(){
+    public CellsModel getCellsModel() {
         return cellsModel;
     }
 
-    public void nextGeneration(){
+    public void nextGeneration() {
         CellsModel nextGenerationCellsModel = new CellsModel(cellsModel.columns(), cellsModel.rows());
-        for(int row = 0; row < cellsModel.rows(); ++row)
-            for(int column = 0; column < cellsModel.columns(); ++column){
-                if(!cellsModel.itsAlive(column, row) && cellsModel.itsHasThreeNeighbors(column, row)) // рождение
+        for (int row = 0; row < cellsModel.rows(); ++row)
+            for (int column = 0; column < cellsModel.columns(); ++column) {
+                if (!cellsModel.itsAlive(column, row) && cellsModel.itsHasThreeNeighbors(column, row)) // рождение
                     nextGenerationCellsModel.setStatusOfCell(column, row);
-                if(cellsModel.itsAlive(column, row) && (cellsModel.itsHasThreeNeighbors(column,row) || cellsModel.itsHasTwoNeighbors(column,row))) // выживание
+                if (cellsModel.itsAlive(column, row) && (cellsModel.itsHasThreeNeighbors(column, row) || cellsModel.itsHasTwoNeighbors(column, row))) // выживание
                     nextGenerationCellsModel.setStatusOfCell(column, row);
             }
         cellsModel = nextGenerationCellsModel;
     }
 
-    public void clearModel(){
+    public void clearModel() {
         cellsModel = new CellsModel(cellsModel.columns(), cellsModel.rows());
     }
 

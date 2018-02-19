@@ -41,7 +41,7 @@ public class MainFrame extends JFrame {
         toolBar.add(aboutProgramButton);
     }
 
-    private void setToolTipsOnButtons(){
+    private void setToolTipsOnButtons() {
         playPauseButton.setToolTipText("Play/pause life");
         nextGenerationButton.setToolTipText("Go to a next generation");
         clearCellFieldButton.setToolTipText("Clear all field");
@@ -49,9 +49,9 @@ public class MainFrame extends JFrame {
         aboutProgramButton.setToolTipText("Information about this program");
     }
 
-    private void addListenersOnButtons(){
+    private void addListenersOnButtons() {
         playPauseButton.addActionListener(e -> {
-            if(!timerOfLife.isRunning()){
+            if (!timerOfLife.isRunning()) {
                 playPauseButton.setText("Pause");
                 timerOfLife.start();
                 nextGenerationButton.setEnabled(false);
@@ -66,8 +66,8 @@ public class MainFrame extends JFrame {
         toCenterOfCellField.addActionListener(e -> scrollableCellFieldPanel.viewToCenter());
     }
 
-    private void offFocusableOfButtons(){
-        for(Component button : toolBar.getComponents())
+    private void offFocusableOfButtons() {
+        for (Component button : toolBar.getComponents())
             button.setFocusable(false);
     }
 

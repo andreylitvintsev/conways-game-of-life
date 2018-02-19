@@ -1,8 +1,8 @@
 package com.github.andreylitvintsev.gameoflife;
 
-import javax.swing.*;
-
 import com.github.andreylitvintsev.gameoflife.view.MainFrame;
+
+import javax.swing.*;
 
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
         mainFrame.setVisible(true);
     }
 
-    static private void setUIStyle(){
+    static private void setUIStyle() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | InstantiationException | UnsupportedLookAndFeelException | IllegalAccessException e) {
