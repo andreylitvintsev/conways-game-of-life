@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         setUIStyle();
         MainFrame mainFrame = new MainFrame("Conway's Game of Life");
-        mainFrame.setIconImage(new ImageIcon(Main.class.getResource("resources/icon.png")).getImage());
+        mainFrame.setIconImage(new ImageIcon(ClassLoader.getSystemResource("icon.png")).getImage());
         mainFrame.setVisible(true);
     }
 
