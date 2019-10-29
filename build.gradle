@@ -10,6 +10,7 @@ repositories {
 
 application {
     mainClassName = 'com.github.andreylitvintsev.gameoflife.Main'
+    version = '1.0.0'
 }
 
 jar {
