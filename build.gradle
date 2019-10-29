@@ -8,11 +8,16 @@ repositories {
     jcenter()
 }
 
-dependencies {
-    implementation 'com.google.guava:guava:28.0-jre'
-    testImplementation 'junit:junit:4.12'
-}
-
 application {
     mainClassName = 'com.github.andreylitvintsev.gameoflife.Main'
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": mainClassName
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
